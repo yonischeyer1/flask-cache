@@ -9,7 +9,7 @@
     :license: BSD, see LICENSE for more details
 """
 
-__version__ = '0.13'
+__version__ = '0.13.1'
 __versionfull__ = __version__
 
 import base64
@@ -309,7 +309,7 @@ class Cache(object):
                 if callable(key_prefix):
                     cache_key = key_prefix()
                 elif '%s' in key_prefix:
-                    cache_key = key_prefix % request.path
+                    cache_key = key_prefix % request.url
                 else:
                     cache_key = key_prefix
 
